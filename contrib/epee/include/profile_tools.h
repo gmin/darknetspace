@@ -56,8 +56,8 @@ namespace epee
 #define WAY_POINT2(name, avrg_obj) {uint64_t delta = misc_utils::get_tick_count()-_____way_point_time; avrg_obj.push(delta); LOG_PRINT("Way point " << name << ": " << delta, LOG_LEVEL_2);_____way_point_time = misc_utils::get_tick_count();}
 
 
-#define TIME_MEASURE_START(var_name)    uint64_t var_name = misc_utils::get_tick_count();
-#define TIME_MEASURE_FINISH(var_name)   var_name = misc_utils::get_tick_count() - var_name;
+#define TIME_MEASURE_START(var_name)    uint64_t var_name = epee::misc_utils::get_tick_count();
+#define TIME_MEASURE_FINISH(var_name)   var_name = epee::misc_utils::get_tick_count() - var_name;
 
 namespace profile_tools
 {

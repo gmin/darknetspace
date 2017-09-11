@@ -259,7 +259,7 @@ bool blockchain_storage::rebuildcache(uint64_t start_height)
 				break;
 			}
 
-			TransactionIndex transactionIndex = { b, t };
+			TransactionIndex transactionIndex = { static_cast<unsigned int>(b), t };
 			m_transactions.insert(std::make_pair(transactionHash, transactionIndex));
 
 			//m_spent_keys

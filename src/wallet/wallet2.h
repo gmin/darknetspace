@@ -60,9 +60,9 @@ namespace tools
 
   class wallet2
   {
-	  wallet2(const wallet2&) : m_run(true), m_callback(0) { init("http://localhost:" + string_tools::num_to_string_fast(RPC_DEFAULT_PORT));};
+	  wallet2(const wallet2&) : m_run(true), m_callback(0) { init("http://localhost:" + epee::string_tools::num_to_string_fast(RPC_DEFAULT_PORT));};
   public:
-	  wallet2() : m_run(true), m_callback(0){ init("http://localhost:" + string_tools::num_to_string_fast(RPC_DEFAULT_PORT)); };
+	  wallet2() : m_run(true), m_callback(0){ init("http://localhost:" + epee::string_tools::num_to_string_fast(RPC_DEFAULT_PORT)); };
     struct transfer_details
     {
       uint64_t m_block_height;
@@ -117,7 +117,7 @@ namespace tools
 
     void get_recent_transfers_history(std::vector<wallet_rpc::wallet_transfer_info>& trs, size_t offset, size_t count, bool bRecent_first = true);
     void get_unconfirmed_transfers(std::vector<wallet_rpc::wallet_transfer_info>& trs);
-	void init(const std::string& daemon_address = "http://localhost:" + string_tools::num_to_string_fast(RPC_DEFAULT_PORT));
+	void init(const std::string& daemon_address = "http://localhost:" + epee::string_tools::num_to_string_fast(RPC_DEFAULT_PORT));
     bool deinit();
 
     void stop() { m_run.store(false, std::memory_order_relaxed); }

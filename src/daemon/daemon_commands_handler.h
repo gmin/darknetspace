@@ -72,7 +72,7 @@ public:
 			}
 
 			bool bSuccess = m_srv.get_payload_object().get_core().get_blockchain_storage().rollback_blockchain(height);
-			if (bSuccess = false)
+			if (bSuccess == false)
 			{
 				std::cout << "rollback to " << height << " failed." << ENDL;
 			}
